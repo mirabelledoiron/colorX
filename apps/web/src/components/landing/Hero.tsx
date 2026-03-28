@@ -18,7 +18,7 @@ export function Hero() {
             ratio checked against WCAG 2.1 and APCA standards. Ready-to-use CSS
             variables in seconds.
           </p>
-          <Link to="/generator" className={buttonVariants({ size: "lg" })}>
+          <Link to="/generator" className={buttonVariants({ size: "lg", className: "px-8 py-3 text-base" })}>
             Launch the Generator
           </Link>
         </Stack>

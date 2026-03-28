@@ -37,8 +37,8 @@ export function WCAGExplainer() {
       <Grid as="ul" cols={3} gap="md">
         {LEVELS.map((item) => (
           <li key={item.level}>
-            <Card className="text-center">
-              <CardHeader>
+            <Card className="text-left">
+              <CardHeader className="text-center">
                 <CardTitle className="text-2xl">{item.level}</CardTitle>
                 <CardDescription className="font-mono">{item.ratio}</CardDescription>
               </CardHeader>

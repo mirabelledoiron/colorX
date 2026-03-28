@@ -36,15 +36,15 @@ export function HowItWorks() {
       <Grid as="ol" cols={3} gap="lg">
         {STEPS.map((step) => (
           <li key={step.number}>
-            <Card className="text-center">
-              <CardHeader className="items-center">
+            <Card>
+              <CardHeader className="flex flex-col items-center text-center">
                 <span className="mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-primary text-lg font-bold text-primary-foreground">
                   {step.number}
                 </span>
                 <CardTitle>{step.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm leading-relaxed text-muted-foreground">
+                <p className="text-sm leading-relaxed text-muted-foreground text-left">
                   {step.description}
                 </p>
               </CardContent>

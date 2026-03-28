@@ -1,28 +1,35 @@
+import type { ReactNode } from "react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Container, Grid, Stack } from "@/components/layout/primitives";
+import { ScanEye, Code, Palette, Eye } from "lucide-react";
 
-const FEATURES = [
+interface Feature {
+  icon: ReactNode;
+  title: string;
+  description: string;
+}
+
+const FEATURES: Feature[] = [
   {
-    icon: "Aa",
+    icon: <ScanEye className="h-5 w-5" />,
     title: "WCAG + APCA Contrast Audit",
     description:
       "Every foreground/background pair is tested against WCAG 2.1 AA/AAA and APCA Lc thresholds. See exact ratios and pass/fail status for each.",
   },
   {
-    icon: "</>",
+    icon: <Code className="h-5 w-5" />,
     title: "Copy-Paste CSS Variables",
     description:
       "Get a complete CSS block with custom properties that support both prefers-color-scheme media queries and data-theme attribute toggling.",
   },
   {
-    icon: "15",
-    title: "15 Design Tokens",
+    icon: <Palette className="h-5 w-5" />,
+    title: "Design Tokens",
     description:
       "Background, surface, primary, text hierarchy, borders, and semantic colors. Everything you need for a production-ready color system.",
   },
   {
-    icon: "CVD",
+    icon: <Eye className="h-5 w-5" />,
     title: "Color Vision Simulation",
     description:
       "Preview how your themes appear to people with deuteranopia, protanopia, tritanopia, and achromatopsia before shipping.",
@@ -47,9 +54,9 @@ export function Features() {
             <li key={feature.title}>
               <Card>
                 <CardHeader>
-                  <Badge variant="secondary" className="mb-1 w-fit text-sm font-bold">
+                  <span className="mb-1 flex h-10 w-10 items-center justify-center rounded-lg bg-muted text-muted-foreground">
                     {feature.icon}
-                  </Badge>
+                  </span>
                   <CardTitle>{feature.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
