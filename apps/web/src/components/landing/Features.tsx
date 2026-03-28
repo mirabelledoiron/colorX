@@ -1,6 +1,8 @@
 import type { ReactNode } from "react";
+import { motion } from "motion/react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Container, Grid, Stack } from "@/components/layout/primitives";
+import { AnimateIn } from "@/components/common/AnimateIn";
 import { ScanEye, Code, Palette, Eye } from "lucide-react";
 
 interface Feature {
@@ -40,32 +42,39 @@ export function Features() {
   return (
     <section className="bg-muted/50 py-16">
       <Container size="lg">
-        <Stack gap="lg" className="mb-12 items-center text-center">
-          <h2 className="text-3xl font-extrabold tracking-tight">
-            What You Get
-          </h2>
-          <p className="max-w-xl text-muted-foreground">
-            Everything you need to go from a single hex code to a production-ready
-            color system.
-          </p>
-        </Stack>
+        <AnimateIn>
+          <Stack gap="lg" className="mb-12 items-center text-center">
+            <h2 className="text-3xl font-extrabold tracking-tight">
+              What You Get
+            </h2>
+            <p className="max-w-xl text-muted-foreground">
+              Everything you need to go from a single hex code to a production-ready
+              color system.
+            </p>
+          </Stack>
+        </AnimateIn>
         <Grid as="ul" cols={2} gap="md">
-          {FEATURES.map((feature) => (
-            <li key={feature.title}>
-              <Card>
-                <CardHeader>
-                  <span className="mb-1 flex h-10 w-10 items-center justify-center rounded-lg bg-muted text-muted-foreground">
-                    {feature.icon}
-                  </span>
-                  <CardTitle>{feature.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm leading-relaxed text-muted-foreground">
-                    {feature.description}
-                  </p>
-                </CardContent>
-              </Card>
-            </li>
+          {FEATURES.map((feature, i) => (
+            <AnimateIn key={feature.title} delay={i * 0.1}>
+              <motion.li
+                whileHover={{ y: -4 }}
+                transition={{ type: "spring", stiffness: 300, damping: 25 }}
+              >
+                <Card>
+                  <CardHeader>
+                    <span className="mb-1 flex h-10 w-10 items-center justify-center rounded-lg bg-muted text-muted-foreground">
+                      {feature.icon}
+                    </span>
+                    <CardTitle>{feature.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm leading-relaxed text-muted-foreground">
+                      {feature.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              </motion.li>
+            </AnimateIn>
           ))}
         </Grid>
       </Container>
