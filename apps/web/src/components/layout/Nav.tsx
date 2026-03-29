@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router";
 import { Moon, Sun, Accessibility, Leaf } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { buttonVariants } from "@/components/ui/button";
+import { LinkButton } from "@/components/common/LinkButton";
 import { Flex } from "@/components/layout/primitives";
 import { usePreferences } from "@/hooks/usePreferences";
 
@@ -54,13 +54,13 @@ export function Nav() {
         </Button>
 
         {isGenerator ? (
-          <Link to="/" className={buttonVariants({ variant: "secondary", size: "sm" })}>
+          <LinkButton to="/" variant="secondary" size="sm">
             How It Works
-          </Link>
+          </LinkButton>
         ) : (
-          <Link to="/generator" className={buttonVariants({ size: "sm" })}>
+          <LinkButton to="/generator" size="sm">
             Open Generator
-          </Link>
+          </LinkButton>
         )}
       </Flex>
     </Flex>

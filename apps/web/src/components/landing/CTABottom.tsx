@@ -1,6 +1,5 @@
-import { Link } from "react-router";
-import { buttonVariants } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import { LinkButton } from "@/components/common/LinkButton";
 import { AnimateIn } from "@/components/common/AnimateIn";
 
 export function CTABottom() {
@@ -17,9 +16,9 @@ export function CTABottom() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <Link to="/generator" className={buttonVariants({ size: "lg", variant: "secondary" })}>
+            <LinkButton to="/generator" size="lg" variant="secondary">
               Open the Generator
-            </Link>
+            </LinkButton>
           </CardContent>
         </Card>
       </AnimateIn>

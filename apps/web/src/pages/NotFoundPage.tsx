@@ -1,6 +1,5 @@
-import { Link } from "react-router";
-import { buttonVariants } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import { LinkButton } from "@/components/common/LinkButton";
 import { Container, Flex } from "@/components/layout/primitives";
 
 export function NotFoundPage() {
@@ -15,12 +14,12 @@ export function NotFoundPage() {
         </CardHeader>
         <CardContent>
           <Flex gap="sm">
-            <Link to="/" className={buttonVariants({ variant: "secondary" })}>
+            <LinkButton to="/" variant="secondary">
               Home
-            </Link>
-            <Link to="/generator" className={buttonVariants()}>
+            </LinkButton>
+            <LinkButton to="/generator">
               Open Generator
-            </Link>
+            </LinkButton>
           </Flex>
         </CardContent>
       </Card>

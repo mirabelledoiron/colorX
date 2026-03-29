@@ -1,6 +1,5 @@
-import { Link } from "react-router";
-import { buttonVariants } from "@/components/ui/button";
 import { Grid, Stack } from "@/components/layout/primitives";
+import { LinkButton } from "@/components/common/LinkButton";
 import { AnimateIn } from "@/components/common/AnimateIn";
 import { DemoPreview } from "./DemoPreview";
 
@@ -20,9 +19,9 @@ export function Hero() {
               ratio checked against WCAG 2.1 and APCA standards. Ready-to-use CSS
               variables in seconds.
             </p>
-            <Link to="/generator" className={buttonVariants({ size: "lg", className: "w-fit px-8 py-3 text-base" })}>
+            <LinkButton to="/generator" size="lg" className="w-fit px-8 py-3 text-base">
               Launch the Generator
-            </Link>
+            </LinkButton>
           </Stack>
         </AnimateIn>
         <AnimateIn direction="right" delay={0.2}>
