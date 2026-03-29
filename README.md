@@ -29,7 +29,7 @@ Side-by-side comparison of original vs simulated themes for each deficiency type
 |-------|------------|
 | Core engine | TypeScript, zero dependencies |
 | Web app | React 19, Vite 6, Tailwind CSS v4 |
-| UI components | shadcn/ui (Radix primitives) |
+| UI components | shadcn/ui (Base UI primitives) |
 | Layout system | Custom primitives (Container, Stack, Grid, Flex) |
 | Animation | Motion (formerly Framer Motion) |
 | Icons | Lucide React, React Icons |
@@ -101,7 +101,7 @@ All animations respect user preferences: disabled when a11y mode, low carbon mod
 Built into the site regardless of a11y mode:
 
 - Skip-to-content link
-- WAI-ARIA Tabs with keyboard navigation (arrow keys, Home, End)
+- WAI-ARIA Tabs via Base UI with built-in keyboard navigation
 - Screen reader announcements via `aria-live` regions for theme generation and clipboard events
 - Focus management on route transitions
 - `prefers-reduced-motion` media query support
@@ -137,8 +137,9 @@ colorx/
           cvd/           # CVDSimulation, CVDPreview
           output/        # CSSOutput, CopyButton
           landing/       # Hero, DemoPreview, HowItWorks, Features, WCAGExplainer, TokenReference, CTABottom
-          common/        # AnimateIn, LowCarbonImage, VisuallyHidden
+          common/        # AnimateIn, ErrorBoundary, LowCarbonImage, VisuallyHidden
         hooks/
+          useDocumentTitle.ts   # Per-page document title
           usePreferences.ts     # Dark/a11y/low-carbon state (useSyncExternalStore)
           useTheme.ts           # ThemeContext consumer
           useAPCA.ts            # APCA audit for theme pairs
@@ -152,6 +153,7 @@ colorx/
         pages/
           LandingPage.tsx
           GeneratorPage.tsx
+          NotFoundPage.tsx
 ```
 
 ## Getting Started
