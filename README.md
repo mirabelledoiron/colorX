@@ -233,7 +233,7 @@ const simulated = simulateThemeCVD(output.light, "deuteranopia");
 | `<meta name="robots" content="index, follow">` | Done |
 | Open Graph tags (og:title, og:description, og:image, og:url) | Done |
 | Twitter Card tags (twitter:card, twitter:title, twitter:description, twitter:image) | Done |
-| OG image placeholder (1200x630) | Placeholder -- needs screenshot |
+| OG image (1200x630) | Done |
 | `<html lang="en">` | Done |
 | Favicon (SVG) | Done |
 | `robots.txt` with sitemap reference | Done |
