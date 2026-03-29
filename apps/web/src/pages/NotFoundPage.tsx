@@ -1,8 +1,11 @@
+import { useNavigate } from "react-router";
+import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { LinkButton } from "@/components/common/LinkButton";
 import { Container, Flex } from "@/components/layout/primitives";
 
 export function NotFoundPage() {
+  const navigate = useNavigate();
+
   return (
     <Container as="article" className="py-20">
       <Card className="mx-auto max-w-lg">
@@ -14,12 +17,12 @@ export function NotFoundPage() {
         </CardHeader>
         <CardContent>
           <Flex gap="sm">
-            <LinkButton to="/" variant="secondary">
+            <Button variant="secondary" onClick={() => navigate("/")}>
               Home
-            </LinkButton>
-            <LinkButton to="/generator">
+            </Button>
+            <Button onClick={() => navigate("/generator")}>
               Open Generator
-            </LinkButton>
+            </Button>
           </Flex>
         </CardContent>
       </Card>

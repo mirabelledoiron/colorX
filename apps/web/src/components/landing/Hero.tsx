@@ -1,9 +1,12 @@
+import { useNavigate } from "react-router";
+import { Button } from "@/components/ui/button";
 import { Grid, Stack } from "@/components/layout/primitives";
-import { LinkButton } from "@/components/common/LinkButton";
 import { AnimateIn } from "@/components/common/AnimateIn";
 import { DemoPreview } from "./DemoPreview";
 
 export function Hero() {
+  const navigate = useNavigate();
+
   return (
     <section className="bg-gradient-to-br from-[#f8f9ff] via-[#eef1ff] to-[#f5f0ff] px-6 pb-16 pt-20 dark:from-background dark:via-background dark:to-background">
       <Grid as="article" cols={2} gap="xl" className="mx-auto max-w-6xl items-center">
@@ -19,9 +22,9 @@ export function Hero() {
               ratio checked against WCAG 2.1 and APCA standards. Ready-to-use CSS
               variables in seconds.
             </p>
-            <LinkButton to="/generator" size="lg" className="w-fit px-8 py-3 text-base">
+            <Button size="lg" className="w-fit px-8 py-3 text-base" onClick={() => navigate("/generator")}>
               Launch the Generator
-            </LinkButton>
+            </Button>
           </Stack>
         </AnimateIn>
         <AnimateIn direction="right" delay={0.2}>

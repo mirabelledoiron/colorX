@@ -1,58 +1,43 @@
 import { Globe } from "lucide-react";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
-import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Container, Flex, Stack } from "@/components/layout/primitives";
-
-function ExternalLink({ href, icon, label }: { href: string; icon: React.ReactNode; label: string }) {
-  return (
-    <Button
-      variant="ghost"
-      size="sm"
-      onClick={() => window.open(href, "_blank", "noopener,noreferrer")}
-      aria-label={`${label} (opens in new tab)`}
-    >
-      {icon}
-      {label}
-    </Button>
-  );
-}
+import { Flex } from "@/components/layout/primitives";
 
 export function Footer() {
   return (
-    <Container as="footer" className="py-10 text-center text-sm text-muted-foreground">
-      <Separator className="mb-10" />
-      <Card className="border-0 bg-transparent shadow-none ring-0">
-        <CardContent>
-          <Stack gap="md" className="items-center">
-            <Flex as="nav" gap="xs" align="center" justify="center" wrap>
-              <ExternalLink
-                href="https://www.mirabelledoiron.com/"
-                icon={<Globe className="h-4 w-4" aria-hidden="true" />}
-                label="Portfolio"
-              />
-              <ExternalLink
-                href="https://github.com/mirabelledoiron"
-                icon={<FaGithub className="h-4 w-4" aria-hidden="true" />}
-                label="GitHub"
-              />
-              <ExternalLink
-                href="https://www.linkedin.com/in/mirabelledoiron"
-                icon={<FaLinkedinIn className="h-4 w-4" aria-hidden="true" />}
-                label="LinkedIn"
-              />
-            </Flex>
-            <Separator />
-            <p>
-              Inspired by color-hex.com. Contrast standards from WCAG 2.1 and APCA.
-            </p>
-            <p className="font-medium text-foreground">
-              {new Date().getFullYear()} Mirabelle Doiron. All rights reserved.
-            </p>
-          </Stack>
-        </CardContent>
-      </Card>
-    </Container>
+    <footer className="w-full border-t border-border px-8 py-6">
+      <Flex align="center" justify="between" className="mx-auto max-w-5xl">
+        <p className="text-sm text-muted-foreground">
+          {new Date().getFullYear()} Mirabelle Doiron
+        </p>
+
+        <Flex align="center" gap="xs">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => window.open("https://www.mirabelledoiron.com/", "_blank", "noopener,noreferrer")}
+            aria-label="Portfolio (opens in new tab)"
+          >
+            <Globe className="size-5" />
+          </Button>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => window.open("https://github.com/mirabelledoiron", "_blank", "noopener,noreferrer")}
+            aria-label="GitHub (opens in new tab)"
+          >
+            <FaGithub className="size-5" />
+          </Button>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => window.open("https://www.linkedin.com/in/mirabelledoiron", "_blank", "noopener,noreferrer")}
+            aria-label="LinkedIn (opens in new tab)"
+          >
+            <FaLinkedinIn className="size-5" />
+          </Button>
+        </Flex>
+      </Flex>
+    </footer>
   );
 }
